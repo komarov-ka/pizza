@@ -28,9 +28,9 @@ body {
   &__items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
-
+  //center
   &__top {
     display: flex;
     align-items: center;
