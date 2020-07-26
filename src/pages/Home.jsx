@@ -10,11 +10,10 @@ import {
 
 import { setCategory, setSortBy } from "../redux/action/filters";
 import { fetchPizzas } from "../redux/action/pizzas";
-import { addPizzaToCart } from "../redux/action/cart";
 
 const categoryNames = [
   "Мясные",
-  "Вегетарианская",
+  "Вегетарианские",
   "Гриль",
   "Острые",
   "Закрытые",
@@ -65,14 +64,14 @@ function Home() {
           onClickSortType={onSelectSortType}
         />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">Выберите пиццу 😋</h2>
       <div className="content__items">
         {isLoaded
           ? items.map((obj) => (
               <PizzaBlock
                 onClickAddPizza={handleAddPizzaToCart}
                 key={obj.id}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
                 {...obj}
               />
             ))
