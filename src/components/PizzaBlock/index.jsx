@@ -1,10 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import Button from '../Button';
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import Button from "../Button";
 
-function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, addedCount }) {
-  const availableTypes = ['тонкое', 'традиционное'];
+function PizzaBlock({
+  id,
+  name,
+  imageUrl,
+  price,
+  types,
+  sizes,
+  onClickAddPizza,
+  addedCount,
+}) {
+  const availableTypes = ["тонкое", "традиционное"];
   const availableSizes = [26, 30, 40];
 
   const [activeType, setActiveType] = React.useState(types[0]);
@@ -27,7 +36,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
       size: availableSizes[activeSize],
       type: availableTypes[activeType],
     };
-    onClickAddPizza(obj)
+    onClickAddPizza(obj);
   };
 
   return (
@@ -66,11 +75,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <Button
-          onClick={onAddPizza}
-          className="button--add"
-          outline
-        >
+        <Button onClick={onAddPizza} className="button--add" outline>
           <svg
             width="12"
             height="12"
@@ -102,11 +107,10 @@ PizzaBlock.propTypes = {
 };
 
 PizzaBlock.defaultProps = {
-  name: '---',
+  name: "---",
   price: 0,
   types: [],
   sizes: [],
-
 };
 
 export default PizzaBlock;

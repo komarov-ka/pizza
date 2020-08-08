@@ -11,7 +11,7 @@ import {
   minusCartItem,
 } from "../redux/action/cart";
 
-function Cart() {
+function Cart({ imageUrl }) {
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
 
@@ -26,7 +26,7 @@ function Cart() {
   };
 
   const onRemoveItem = (id) => {
-    if (window.confirm("Вы действительно хотите удалить?")) {
+    if (window.confirm("Вы действительно хотите удалить пиццу?")) {
       dispatch(removeCartItem(id));
     }
   };
@@ -135,6 +135,7 @@ function Cart() {
                   onRemove={onRemoveItem}
                   onMinus={onMinusItem}
                   onPlus={onPlusItem}
+                  imgUrl={obj.imageUrl}
                 />
               ))}
             </div>
@@ -185,7 +186,8 @@ function Cart() {
             <p>
               Вероятней всего, вы ещё не добавляли пиццу.
               <br />
-              Для того, чтобы добавить пиццу в корзину, перейди на главную страницу.
+              Для того, чтобы добавить пиццу в корзину, перейди на главную
+              страницу.
             </p>
             <img src={cartEmptyImage} alt="Empty cart" />
             <Link to="/" className="button button--black">
