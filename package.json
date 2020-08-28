@@ -77,8 +77,7 @@
     "start": "yarn run watch:client",
     "watch:client": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "watch:server": "npx json-server --watch public/db.json --port=3089"
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
