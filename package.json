@@ -1,8 +1,7 @@
 {
-  "name": "pizza",
+  "name": "react-pizza",
   "version": "0.1.0",
   "private": true,
-  "main": "start.js",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -31,7 +30,6 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "express": "^4.17.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "4.0.0-beta.11",
@@ -70,17 +68,20 @@
     "webpack": "4.42.0",
     "webpack-dev-server": "3.10.3",
     "webpack-manifest-plugin": "2.2.0",
-    "websocket.io": "^0.2.1",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "json-server": "^0.16.1"
   },
   "scripts": {
-    "start": "yarn run watch:client",
-    "watch:client": "node scripts/start.js",
-    "test": "node scripts/test.js"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "server": "node server.js",
+    "json-server": "json-server --watch public/db.json --port=3089"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:3089",
   "browserslist": {
     "production": [
       ">0.2%",
